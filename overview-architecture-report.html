@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+@page { margin: 2cm 1.5cm; size: A4; }
+@page :first { margin-top: 1cm; }
+body {
+  font-family: 'Noto Sans SC', 'Segoe UI', Arial, sans-serif;
+  color: #1e293b; line-height: 1.8; font-size: 12pt;
+  max-width: 800px; margin: 0 auto; padding: 20px;
+}
+h1 { font-size: 26pt; color: #1a56db; margin-top: 0; margin-bottom: 4px; }
+.subtitle { font-size: 14pt; color: #64748b; margin-bottom: 30px; }
+h2 {
+  font-size: 18pt; color: #1e40af; border-bottom: 3px solid #1a56db;
+  padding-bottom: 6px; margin-top: 36px; page-break-after: avoid;
+}
+h3 { font-size: 14pt; color: #334155; margin-top: 24px; page-break-after: avoid; }
+h4 { font-size: 12pt; color: #475569; margin-top: 16px; }
+.meta-box {
+  background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 8px;
+  padding: 16px 20px; margin: 20px 0; font-size: 10.5pt;
+}
+.meta-box strong { color: #4338ca; }
+table {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10pt;
+  page-break-inside: avoid;
+}
+th { background: #1a56db; color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+td { padding: 7px 10px; border-bottom: 1px solid #e2e8f0; }
+tr:nth-child(even) td { background: #f8fafc; }
+.tag { display: inline-block; font-size: 8.5pt; padding: 2px 8px; border-radius: 10px; background: #e8eefb; color: #1a56db; margin: 1px; }
+.status-running { color: #16a34a; font-weight: 600; }
+.status-stopped { color: #94a3b8; }
+.status-ready { color: #64748b; }
+.section-desc { color: #64748b; font-size: 11pt; margin: -8px 0 16px; }
+.arch-card {
+  border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;
+  margin: 10px 0; background: #fafcff;
+  page-break-inside: avoid;
+}
+.arch-card h4 { margin: 0 0 8px; color: #1a56db; }
+.arch-card p { margin: 4px 0; font-size: 10pt; }
+.arch-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;
+}
+.mermaid { display: none; }
+.page-break { page-break-before: always; }
+.map-row { display: flex; gap: 8px; margin: 6px 0; flex-wrap: wrap; }
+.map-item {
+  flex: 1; min-width: 140px; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 10px; background: #fff; font-size: 9.5pt;
+}
+.map-item .layer { font-weight: 600; color: #1a56db; font-size: 10pt; margin-bottom: 4px; }
+.map-item .items { color: #475569; line-height: 1.6; }
+ul { margin: 6px 0; padding-left: 20px; }
+li { margin: 3px 0; font-size: 10.5pt; }
+@media print {
+  body { padding: 0; max-width: none; }
+  .page-break { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+
+<h1>张文超 · AI时代的个人思考与实践</h1>
+<div class="subtitle">系统架构与内容说明白皮书</div>
+
+<div class="meta-box">
+  <strong>版本：</strong>2026-06-11（持续迭代） &nbsp;|&nbsp;
+  <strong>作者：</strong>张文超（Hermes Agent 助理整理） &nbsp;|&nbsp;
+  <strong>定位：</strong>香港科技大学（广州）人才处处长 · IzzyLink Talent 首席领域专家
+</div>
+
+<!-- ==================== 第1章 ==================== -->
+<h2>1. 系统概览</h2>
+<p>
+本系统是张文超个人AI生态的全面呈现，涵盖<strong>43个项目、11个分类、7大板块</strong>。
+从人才哲学顶层构建到底层工具实现，形成"认知→管理→实践→工具"的完整闭环。
+</p>
+<p>系统由以下<strong>8大板块</strong>组成：</p>
+<table>
+<tr><th>#</th><th>板块</th><th>核心内容</th><th>数量</th></tr>
+<tr><td>1</td><td>Who Am I</td><td>个人履历、核心优势、个人特色（智者换河、知行合一、持续进化）</td><td>3组</td></tr>
+<tr><td>2</td><td>哲学体系</td><td>五层追问：本体论·方法论·认识论·关系论·实践论</td><td>5模块</td></tr>
+<tr><td>3</td><td>认知建构</td><td>AI Agent 探索、认知记忆、知识构建三条时间线</td><td>3线</td></tr>
+<tr><td>4</td><td>管理输出</td><td>对人的引领、对事的统筹、对资源的整合</td><td>3职能</td></tr>
+<tr><td>5</td><td>知行并进</td><td>工作实践、生活探索、认知迭代</td><td>3层</td></tr>
+<tr><td>6</td><td>工具生态</td><td>五层架构：应用·平台·底座·模型·数据</td><td>5层</td></tr>
+<tr><td>7</td><td>技能工坊</td><td>Hermes 自研技能时间线</td><td>194个</td></tr>
+<tr><td>8</td><td>项目作品</td><td>临时性项目文件的分类展示</td><td>43件</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第2章 ==================== -->
+<h2>2. 哲学体系（顶层架构）</h2>
+<div class="section-desc">第一性原理：AI时代，人与组织的关系正在被重新定义</div>
+
+<h3>2.1 纵向递进（三层追问链）</h3>
+
+<table>
+<tr><th>维度</th><th>追问</th><th>核心论断</th></tr>
+<tr>
+  <td>🧬 能力本位（本体论）</td>
+  <td>组织的原子是什么？</td>
+  <td>传统以"人才"为单元，AI时代能力可独立于人存在。<br>
+  <strong>追问链：</strong>创造价值→价值靠能力→能力在个体→组织只取"能力"这个原子</td>
+</tr>
+<tr>
+  <td>🚀 长板驱动（方法论）</td>
+  <td>能力如何生长才有价值？</td>
+  <td>全面发展只是基础门槛，特色才是价值起点。<br>
+  <strong>追问链：</strong>能力需足够深度→精力有限→必须聚焦→聚焦靠热情→深耕靠毅力</td>
+</tr>
+<tr>
+  <td>🌱 成长归己（认识论）</td>
+  <td>成长的责任在谁？</td>
+  <td>组织提供土壤、资源、反馈，但不能替人成长。<br>
+  <strong>追问链：</strong>长板靠个人主动→主动无法强制→成长责任归个人→组织负责创造条件</td>
+</tr>
+</table>
+
+<h3>2.2 横向支撑（关系论 + 实践论）</h3>
+<table>
+<tr><th>维度</th><th>追问</th><th>核心论断</th></tr>
+<tr><td>🤝 价值交换</td><td>人与组织是什么关系？</td><td>个人带来能力，组织提供场景。两者因匹配连接——匹配失效则关系自然结束。交换非依附。</td></tr>
+<tr><td>🔄 动态适配</td><td>关系如何持续？</td><td>能力在变，环境在变，没有一劳永逸的匹配。持续校准，拒绝僵化。</td></tr>
+</table>
+
+<h3>2.3 核心金句</h3>
+<ul>
+  <li><strong>三种锚定心态：</strong>没有失败，没有敌人，没有白走的路</li>
+  <li><strong>本我四段论：</strong>认识你自己→接纳你自己→成为你自己→超越你自己</li>
+  <li><strong>管理定义：</strong>对人的引领 + 对事的统筹 + 对资源的整合</li>
+  <li><strong>核心认知转变：</strong>组织的原子不是"人"，是"能力"</li>
+  <li><strong>智者换河：</strong>不是河的问题，是换河的勇气</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第3章 ==================== -->
+<h2>3. 认知脉络（三条时间线）</h2>
+
+<h3>3.1 🤖 Agent 探索</h3>
+<table>
+<tr><th>阶段</th><th>内容</th></tr>
+<tr><td>LLM → AI Agent 技能系统</td><td>从大语言模型出发，研究Agent技能系统、工具调用、MCP协议。深度定制Hermes Agent，构建194个自研技能。</td></tr>
+<tr><td>多智能体系统 (MAS) → OpenHuman</td><td>研究多智能体协作模式（辩论/投票/分层路由）。对比分析OpenHuman（8.6k Stars）。</td></tr>
+<tr><td>3D管理界面 → Claw3D/OpenClaw</td><td>探索管理交互的下一个范式。Next.js 16 + Three.js 沉浸式3D场景。</td></tr>
+</table>
+
+<h3>3.2 🧠 认知记忆</h3>
+<table>
+<tr><th>阶段</th><th>内容</th></tr>
+<tr><td>记忆机制 → MemTensor 双通道检索</td><td>向量+全文双通道检索，智能去重，跨session人格一致性保障。</td></tr>
+<tr><td>荣格心理学画像 → 精神数字分身</td><td>超越技术记忆，进入人格层面。基于荣格心理学构建人格画像。</td></tr>
+<tr><td>Obsidian 知识库 → DACR框架</td><td>70+双链笔记，收笼→理顺→在办→归档→输出。</td></tr>
+</table>
+
+<h3>3.3 📖 知识构建</h3>
+<table>
+<tr><th>阶段</th><th>内容</th></tr>
+<tr><td>IzzyLink Talent 一体化引才平台</td><td>团队核心产出。羚羊人才大模型+学术大数据(6,912万+论文)+人才大数据+政策大数据+岗位信息库。</td></tr>
+<tr><td>全球人才研究 → Ontology本体 → 政策库</td><td>学术人才Ontology（183实体/583三元组/27关系），爬取37国7,106条人才政策。</td></tr>
+<tr><td>量化交易 → 金箍棒多策略系统</td><td>MA/动量/波动率/RSRS四引擎，多空辩论机制，工作日4时段推送。</td></tr>
+<tr><td>八字命理 → 星座星盘 → 合婚择吉</td><td>lunar-python + JPL DE421 + Skyfield 全栈。</td></tr>
+<tr><td>单一技能 → 唐三管理驾驶舱</td><td>从零散Hermes技能入口整合为统一驾驶舱。</td></tr>
+<tr><td>个人学习 → 对外输出</td><td>从Obsidian输出层到知乎文章、PPT演示、受邀报告。</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第4章 ==================== -->
+<h2>4. 管理输出体系</h2>
+
+<h3>4.1 对人的引领</h3>
+<table>
+<tr><th>模块</th><th>描述</th><th>标签</th></tr>
+<tr><td>西游五人组 Agent团队</td><td>唐三统筹·悟空执行·八戒生活·三太子研究·沙师弟监督</td><td>多智能体·分工协作·飞书+CLI</td></tr>
+<tr><td>下属辅导框架</td><td>先诊断再决策，区分性格/状态/能力，不急于改造</td><td>心理咨询·管理诊断·SFBT</td></tr>
+<tr><td>人才猎寻三层框架</td><td>发现→评估→联系，覆盖全球30+地域，种子学者18人，TH系统839条数据</td><td>学术人才·全球网络·OpenAlex</td></tr>
+<tr><td>人才成长发展支持体系</td><td>从入职适应到职业跃迁全周期支持，三诊匹配岗位</td><td>全周期·职业发展·组织支持</td></tr>
+</table>
+
+<h3>4.2 对事的统筹</h3>
+<table>
+<tr><th>模块</th><th>描述</th></tr>
+<tr><td>IzzyLink Talent 一体化引才平台</td><td>人才处数字化转型核心引擎，全链路智能化</td></tr>
+<tr><td>人才知识库</td><td>政策文件、工作流程、经验案例的结构化存储</td></tr>
+<tr><td>人才服务智能化系统</td><td>AI驱动：人才发现→画像生成→匹配推荐→申报辅助</td></tr>
+<tr><td>日程及任务管理</td><td>Google日历 + Hermes Todo + 唐三仪表盘甘特图</td></tr>
+<tr><td>会议活动管理</td><td>学术论坛到战略合作全流程：议程→材料→纪要→跟进</td></tr>
+</table>
+
+<h3>4.3 对资源的整合</h3>
+<table>
+<tr><th>模块</th><th>描述</th></tr>
+<tr><td>国家级平台项目</td><td>三年内主导推进三个国家级平台与项目</td></tr>
+<tr><td>粤港澳人才生态联盟</td><td>牵头构建大湾区人才生态联盟，三地资源整合</td></tr>
+<tr><td>玛丽居里华人学会工作站</td><td>覆盖多个国家、数十个学联和学者学会</td></tr>
+<tr><td>广州市教育科技人才一体化平台</td><td>教育链、人才链与产业链、创新链有机衔接</td></tr>
+<tr><td>受邀报告与学术交流</td><td>华南师大、清华深零一学院、中南大学等专题报告</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第5章 ==================== -->
+<h2>5. 知行并进（项目体系）</h2>
+
+<h3>5.1 工作实践项目</h3>
+<table>
+<tr><th>项目</th><th>描述</th><th>状态</th><th>端口</th></tr>
+<tr>
+  <td>🚀 IzzyLink Talent 一体化引才平台</td>
+  <td><strong>团队核心产出。</strong>羚羊人才大模型+学术大数据(6,912万+论文)+人才大数据+政策信息库+岗位信息库。覆盖人才发现→画像→匹配→申报全链路。</td>
+  <td class="status-running">● 运行中</td>
+  <td>在线</td>
+</tr>
+<tr>
+  <td>🎯 Talent Hunter</td>
+  <td>人才处"找人→评估→联系"数字化。839条学者，三级分级(S/A/B)。</td>
+  <td class="status-stopped">○ 就绪</td>
+  <td>:8765</td>
+</tr>
+<tr>
+  <td>🌍 全球人才政策库</td>
+  <td>7,106条政策·37国·18类别。自动化爬虫+多维可视化。</td>
+  <td class="status-stopped">○ 就绪</td>
+  <td>:8767</td>
+</tr>
+<tr>
+  <td>📚 学术本体 Ontology</td>
+  <td>183实体·583三元组·27关系。图结构思维，人才知识可推理。</td>
+  <td class="status-ready">○ 就绪</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>🏢 Global HCR Insight</td>
+  <td>HCR+Ioannidis两套评价体系数据整合看板。</td>
+  <td class="status-stopped">○ 就绪</td>
+  <td>:8648</td>
+</tr>
+<tr>
+  <td>🎨 港科广引才知识漫画</td>
+  <td>10张成套漫画——校园→南沙→枢纽→学术自由→双校区→人才集群。</td>
+  <td class="status-ready">○ 就绪</td>
+  <td>-</td>
+</tr>
+</table>
+
+<h3>5.2 生活探索</h3>
+<table>
+<tr><th>项目</th><th>描述</th><th>状态</th></tr>
+<tr>
+  <td>📈 金箍棒量化系统</td>
+  <td>MA/动量/波动率/RSRS多策略+多空辩论+实盘信号推送。</td>
+  <td class="status-ready">○ 就绪</td>
+</tr>
+<tr>
+  <td>🔮 命运测算服务</td>
+  <td>八字+星座统一框架。lunar-python+JPL DE421+Skyfield。</td>
+  <td class="status-running">● 运行中</td>
+</tr>
+</table>
+
+<h3>5.3 认知迭代</h3>
+<table>
+<tr><th>项目</th><th>描述</th><th>状态</th></tr>
+<tr>
+  <td>📊 唐三管理仪表盘</td>
+  <td>综合管理驾驶舱：记忆/技能(194个)/cron/profiles/合同/甘特图。</td>
+  <td class="status-running">● 运行中</td>
+</tr>
+<tr>
+  <td>📋 PPT/文档/议程输出</td>
+  <td>Slidev报告/会谈简报/评价系统PDF/宣讲材料。</td>
+  <td class="status-running">● 运行中</td>
+</tr>
+<tr>
+  <td>📝 学习笔记</td>
+  <td>OpenAI Prompt Engineering思维导图等技能沉淀。</td>
+  <td class="status-ready">○ 就绪</td>
+</tr>
+<tr>
+  <td>🎤 兄弟院校受邀报告</td>
+  <td>多场受邀分享——人才处经验、融合学科引才策略、AI人才管理。</td>
+  <td class="status-ready">○ 就绪</td>
+</tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第6章 ==================== -->
+<h2>6. 工具生态（五层架构）</h2>
+
+<div class="arch-grid">
+  <div class="arch-card">
+    <h4>📝 应用层</h4>
+    <p>日常使用的应用工具：IzzyLink Talent平台、Obsidian知识库、IMA知识库、NotebookLM、日程管理、任务管理、公文写作</p>
+  </div>
+  <div class="arch-card">
+    <h4>🔌 平台层</h4>
+    <p>承载业务逻辑的运行平台：飞书Gateway、微信Gateway、钉钉Gateway（可扩展）</p>
+  </div>
+  <div class="arch-card">
+    <h4>⚙️ 底座层</h4>
+    <p>底层基础设施：Agent Skills（194个）、OpenClaw Gateway、Hermes Agent、A2A协议、OpenHuman、多智能体MAS、GitNexus Explorer</p>
+  </div>
+  <div class="arch-card">
+    <h4>🧠 模型层</h4>
+    <p>AI核心引擎：DeepSeek（主力）、Gemini（多模态）、NVIDIA（备用）、千问Qwen（中文优化）</p>
+  </div>
+  <div class="arch-card" style="grid-column: 1 / -1;">
+    <h4>🗄️ 数据层</h4>
+    <p>全球学术数据库（OpenAlex）、全球政策数据库（7,106条·37国）、全球人才数据库（839条+Ontology 183实体）</p>
+  </div>
+</div>
+
+<h3>6.1 运行监控</h3>
+<table>
+<tr><th>服务</th><th>端口</th><th>状态</th><th>说明</th></tr>
+<tr><td>EZ Talent Hunter</td><td>:8765</td><td class="status-running">● 运行中</td><td>235K学者·人才库</td></tr>
+<tr><td>命运测算</td><td>:8899</td><td class="status-running">● 运行中</td><td>八字/星座/合婚/择吉</td></tr>
+<tr><td>时光碎片</td><td>:9988</td><td class="status-running">● 运行中</td><td>时空日记</td></tr>
+<tr><td>跨学科资助OA</td><td>:8770</td><td class="status-running">● 运行中</td><td>访问研究资助审批</td></tr>
+<tr><td>Dashboard</td><td>:8645</td><td class="status-running">● 运行中</td><td>管理仪表盘</td></tr>
+<tr><td>前2%高被引</td><td>-</td><td class="status-running">● 运行中</td><td>斯坦福/科睿唯安数据包</td></tr>
+<tr><td>GitNexus Explorer</td><td>:8888</td><td class="status-running">● 运行中</td><td>代码库知识图谱可视化</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第7章 ==================== -->
+<h2>7. 系统架构总览</h2>
+
+<div style="background:#f0f4ff; border:1px solid #c7d2fe; border-radius:12px; padding:20px; margin:16px 0;">
+<h3 style="margin-top:0;">🗺️ 全景架构图</h3>
+
+<p><strong>哲学顶层</strong>（能力本位→长板驱动→成长归己→价值交换→动态适配）</p>
+<p style="text-align:center;color:#1a56db;font-size:16px;">↓ 指导 ↓</p>
+
+<p><strong>管理实践层</strong>（引领·统筹·整合）</p>
+<p style="text-align:center;color:#1a56db;font-size:16px;">↓ 驱动 ↓</p>
+
+<p><strong>知行并进项目群</strong></p>
+<table style="font-size:9pt;">
+<tr><td>工作实践</td><td>IzzyLink Talent · Talent Hunter · 政策库 · Ontology · HCR Insight · 知识漫画</td></tr>
+<tr><td>生活探索</td><td>金箍棒量化 · 命运测算</td></tr>
+<tr><td>认知迭代</td><td>唐三仪表盘 · PPT/文档 · 学习笔记 · 受邀报告</td></tr>
+</table>
+
+<p style="text-align:center;color:#1a56db;font-size:16px;">↓ 承载 ↓</p>
+
+<p><strong>工具生态五层</strong></p>
+<table style="font-size:9pt;">
+<tr><td>应用层</td><td>IzzyLink · Obsidian · IMA · NotebookLM · 日程 · 任务 · 公文</td></tr>
+<tr><td>平台层</td><td>飞书 · 微信 · 钉钉 Gateway</td></tr>
+<tr><td>底座层</td><td>Agent Skills · OpenClaw · Hermes Agent · A2A · MAS · GitNexus</td></tr>
+<tr><td>模型层</td><td>DeepSeek · Gemini · NVIDIA · Qwen</td></tr>
+<tr><td>数据层</td><td>学术数据库 · 政策数据库 · 人才数据库 + Ontology</td></tr>
+</table>
+</div>
+
+<h3>7.1 核心数据指标</h3>
+<table>
+<tr><th>指标</th><th>数值</th></tr>
+<tr><td>自研 Skills</td><td>194 个</td></tr>
+<tr><td>项目作品（文件）</td><td>43 件</td></tr>
+<tr><td>学术数据库论文</td><td>6,912 万+</td></tr>
+<tr><td>人才政策条目</td><td>7,106 条 · 37 国 · 18 类别</td></tr>
+<tr><td>Talent Hunter 学者数据</td><td>839 条 · S/A/B 三级分级</td></tr>
+<tr><td>学术本体</td><td>183 实体 · 583 三元组 · 27 关系</td></tr>
+<tr><td>种子学者</td><td>18 人</td></tr>
+<tr><td>Obsidian 双链笔记</td><td>70+</td></tr>
+<tr><td>GitNexus 索引节点</td><td>113,177 节点 · 193,318 边</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第8章 ==================== -->
+<h2>8. 技术栈与部署架构</h2>
+
+<h3>8.1 技术栈</h3>
+<table>
+<tr><th>层</th><th>技术</th></tr>
+<tr><td>AI 框架</td><td>Hermes Agent v0.15.1（Python 3.11）、DeepSeek / Gemini / NVIDIA / Qwen 多 Provider</td></tr>
+<tr><td>Web 前端</td><td>Vue 3（CDN）、Flask + Vue 3 CDN 单页应用、Next.js 16</td></tr>
+<tr><td>后端</td><td>Flask（Python 3.11）、Node.js 22、Go（Nix）</td></tr>
+<tr><td>数据库</td><td>SQLite、OpenAlex API、JPL DE421（天文历算）</td></tr>
+<tr><td>消息通道</td><td>飞书 WebSocket、微信、钉钉（可扩展）</td></tr>
+<tr><td>可视化</td><td>D3.js（知识图谱）、Mermaid（流程图）、Slidev（演示）</td></tr>
+<tr><td>量化交易</td><td>多策略信号引擎（MA/动量/波动率/RSRS）、多空辩论机制</td></tr>
+<tr><td>日程/任务</td><td>Google Calendar API、Hermes Todo、飞书多维表格</td></tr>
+</table>
+
+<h3>8.2 部署架构</h3>
+<table>
+<tr><th>服务</th><th>端口</th><th>用途</th></tr>
+<tr><td>Dashboard（唐三驾驶舱）</td><td>:8645</td><td>管理仪表盘、overview 页面托管</td></tr>
+<tr><td>EZ Talent Hunter</td><td>:8765</td><td>学术人才猎寻系统</td></tr>
+<tr><td>命运测算</td><td>:8899</td><td>八字/星座/合婚/择吉</td></tr>
+<tr><td>时光碎片</td><td>:9988</td><td>时空日记</td></tr>
+<tr><td>跨学科资助OA</td><td>:8770</td><td>资助审批系统</td></tr>
+<tr><td>GitNexus Explorer</td><td>:8888</td><td>代码库知识图谱可视化</td></tr>
+<tr><td>全球人才政策库 *</td><td>:8767</td><td>37国人才政策数据库</td></tr>
+<tr><td>Global HCR Insight *</td><td>:8648</td><td>高被引学者看板</td></tr>
+</table>
+<p style="font-size:10pt;color:#64748b;">* 标注为就绪状态，按需启动</p>
+
+<div class="page-break"></div>
+
+<!-- ==================== 第9章 ==================== -->
+<h2>9. 内容说明</h2>
+
+<h3>9.1 关于本文件</h3>
+<p>
+本文档由 <strong>Hermes Agent（西游五人组·唐三体系）</strong> 基于 <code>zhangwenchao-overview.html</code>
+页面数据自动生成。该 overview 页面是张文超先生个人AI生态的统一入口，
+托管于 <strong>唐三管理仪表盘</strong>（端口 :8645），访问路径为 <code>/overview</code>。
+</p>
+
+<h3>9.2 数据来源</h3>
+<ul>
+  <li>概述页面：<code>/mnt/c/Users/Administrator/Desktop/HermesProjects/zhangwenchao-overview.html</code></li>
+  <li>仪表盘后端：<code>~/.hermes/team/dashboard_server.py</code>（Flask，端口:8645）</li>
+  <li>技能数据 API：<code>/api/skills/timeline</code>（来自 Hermes Agent 技能目录）</li>
+  <li>项目数据 API：<code>/api/projects</code>（来自 HermesProjects 目录扫描）</li>
+</ul>
+
+<h3>9.3 生成方式</h3>
+<ol>
+  <li>Hermes Agent 读取 overview.html 中 Vue 数据（ref 数组）</li>
+  <li>提取所有项目、工具、哲学、管理、服务等结构化数据</li>
+  <li>生成 HTML 排版文档（A4 适配，带样式表）</li>
+  <li>通过浏览器打印/导出为 PDF</li>
+</ol>
+
+<h3>9.4 维护指引</h3>
+<ul>
+  <li><strong>更新项目数据：</strong>修改 <code>HermesProjects/</code> 目录下的文件，Dashboard 自动检测</li>
+  <li><strong>更新 skills：</strong>在 Hermes Agent 中新增/修改技能，timeline API 自动更新</li>
+  <li><strong>更新 overview 页面：</strong>直接编辑 vue.global.js 方式加载的 <code>zhangwenchao-overview.html</code></li>
+  <li><strong>端口管理：</strong>常驻仅 Dashboard(:8645) + TalentHunter(:8765)，其余按需启动</li>
+</ul>
+
+<hr style="margin-top:40px;">
+<div style="text-align:center;color:#94a3b8;font-size:10pt;padding:20px 0;">
+  Hermes Agent · 唐三管理驾驶舱 · 持续迭代中<br>
+  2026-06-11
+</div>
+
+</body>
+</html>
