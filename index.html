@@ -144,7 +144,16 @@ body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans
 .auth-box button:hover { opacity: .9; }
 .auth-error { color: #ef4444; font-size: 13px; margin-top: 10px; display: none; }
 </style></head><body>
-<!-- ===== 密码访问保护 ===== -->
+<!-- ===== 密码访问保护（持久化版本） ===== -->
+<script>
+(function() {
+  if (localStorage.getItem('hermes_auth') === 'true') {
+    var style = document.createElement('style');
+    style.textContent = '.auth-overlay { display: none !important; }';
+    document.head.appendChild(style);
+  }
+})();
+</script>
 <div id="authOverlay" class="auth-overlay">
   <div class="auth-box">
     <div class="lock-icon">🔒</div>
@@ -161,9 +170,10 @@ body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans
 function checkAuth() {
   const user = document.getElementById('authUser').value;
   const pass = document.getElementById('authPass').value;
-  // ========== 修改这里的用户名和密码 ==========
   if (user === 'zhangwenchao' && pass === 'hsnews1001') {
+    localStorage.setItem('hermes_auth', 'true');
     document.getElementById('authOverlay').style.display = 'none';
+    document.getElementById('authError').style.display = 'none';
   } else {
     document.getElementById('authError').style.display = 'block';
   }
@@ -777,6 +787,7 @@ return { activeSection, sections, sages, toggleSection, openLocal, verticalPhilo
 }).mount('#app');
 </script>
 </body>
+
 
 
 
