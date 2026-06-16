@@ -1,6 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>
+if (localStorage.getItem('hermes_auth') === 'true') {
+  document.documentElement.style.display = 'none';
+  // 登出按钮
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>张文超 · 知行体 — AI时代的人才哲学与实践</title>
@@ -171,7 +177,7 @@ function checkAuth() {
   const user = document.getElementById('authUser').value;
   const pass = document.getElementById('authPass').value;
   if (user === 'zhangwenchao' && pass === 'hsnews1001') {
-    localStorage.setItem('hermes_auth', 'true');
+    localStorage.setItem('hermes_auth_expires', Date.now() + 86400000); localStorage.setItem('hermes_auth', 'true');
     document.getElementById('authOverlay').style.display = 'none';
     document.getElementById('authError').style.display = 'none';
   } else {
@@ -787,6 +793,7 @@ return { activeSection, sections, sages, toggleSection, openLocal, verticalPhilo
 }).mount('#app');
 </script>
 </body>
+
 
 
 
